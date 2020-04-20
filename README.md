@@ -1,5 +1,5 @@
 # StackChat
-![Screenshot](StackChat.PNG)
+![Screenshot](/public/assets/img/StackChat.PNG)
 # Description
 The purpose of this application is to provide code developers with a quick and easy way to share and discuss their code with
 their colleagues and like-minded individuals. We created the interface to be simple and easy to use, to make it appealing to
@@ -14,7 +14,7 @@ If you fork or clone this repo, be sure to npm init and npm install before runni
 HTML was used to build the interface, Tailwind was used to style it, and javascript and MYSQL powers it.
 
 
-![Screenshot](StackChatInterface.PNG)
+![Screenshot](/public/assets/img/StackChatInterface.PNG)
 
 # License
 This application is licensed under MIT.
