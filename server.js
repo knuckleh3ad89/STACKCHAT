@@ -10,9 +10,9 @@ var app = express();
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(session({ secret: "chit chat", resave: true, saveUninitialized: true }));
 app.use(passport.initialize());
 app.use(passport.session());
-app.use(session({ secret: "chit chat", resave: true, saveUninitialized: true }));
 
 
 app.engine("handlebars", handlebars({ defaultLayout: "main" }));

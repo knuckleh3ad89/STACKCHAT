@@ -21,32 +21,10 @@ module.exports = function (app) {
         res.render("login");
     });
 
-    app.post("/api/login", function (req, res) {
-        if (req.user) {
-            res.redirect("/interface");
-        }
-        // res.render("login");
-    });
-
-    app.post('/api/signup', (req, res) => {
-        if (!req.user) {
-            res.redirect('/api/login')
-        }
-        else res.render('interface')
-    });
+    
 
     app.get("/interface", isAuthenticated, function (req, res) {
-        console.log(req.user);
-        db.user.findOne({
-            where: {
-                id: req.user.id
-            }
-        })
-            .then(function (data) {
-                res.sendFile(path.join(__dirname, "../public/interface.html"), { user: req.user });
-
-            });
-
+       res.render("interface");
     });
 
 

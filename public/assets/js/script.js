@@ -6,10 +6,11 @@ const button = $('#button');
 const time = moment().format('LTS');
 const signUpForm = $("#signUpForm");
 const memberForm = $('.memberForm');
-const friendName = $('#memBtn')
+const friendName = $('#memBtn');
+const name = $("#FirstName").val();
  // <-- however were store user's Name
 
-appendMessage('You Joined')
+appendMessage(`Anthony Joined`)
 socket.emit('new-user', name)
 
 socket.on('chat-message', data => {
@@ -23,12 +24,12 @@ socket.on('user-disconnected', name => {
 })
 
 function assignName(name){
-    signUpForm.on('submit', e => {
-    e.preventDefault()
-    return name = $('#FirstName').val()
+    signUpForm.on('submit', function(e) {
+    e.preventDefault();
+    return name = $('#FirstName').val().trim();
 
 }
-)}
+)};
 
 messageForm.on('submit', e => {
     e.preventDefault()
@@ -67,7 +68,7 @@ function appendMessage(message, name) {
         <img src="https://cdn1.iconfinder.com/data/icons/ninja-things-1/1772/ninja-512.png" class="w-10 h-10 rounded mr-3">
         <div class="flex-1 overflow-hidden">
 
-            <div> <span class="font-bold">User</span> <span class="text-grey text-xs">${time}</span> </div>
+            <div> <span class="font-bold"${name}</span> <span class="text-grey text-xs">${time}</span> </div>
             <p class="text-black leading-normal">${message}</p>
         </div>
     </div>`
